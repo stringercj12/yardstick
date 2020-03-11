@@ -132,7 +132,7 @@ class AuthController {
         html: 'emails.welcome',
       };
       sgMail.send(msg);
-
+      console.log('ok')
       return response.status(201).json({
         message: 'New password email sent'
       });
