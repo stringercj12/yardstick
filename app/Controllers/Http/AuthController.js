@@ -115,12 +115,12 @@ class AuthController {
 
     if (user) {
 
-      // await Mail.send('emails.welcome', { name: user.name }, (message) => {
-      //   message
-      //     .to(user.email)
-      //     .from('jefferson14489@gmail.com')
-      //     .subject('Welcome to yardstick')
-      // });
+      await Mail.send('welcome', { name: user.name }, (message) => {
+        message
+          .to(user.email)
+          .from('jefferson14489@gmail.com')
+          .subject('Welcome to yardstick')
+      });
 
       const sgMail = require('@sendgrid/mail');
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
